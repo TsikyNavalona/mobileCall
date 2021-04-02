@@ -14,6 +14,7 @@ import { DepositWaitComponent } from './deposit-wait/deposit-wait.component';
 import { ListTransfertComponent } from './list-transfert/list-transfert.component';
 import { ListClientComponent } from './list-client/list-client.component';
 import { NewOfferComponent } from './new-offer/new-offer.component';
+import { ListOffreComponent } from './list-offre/list-offre.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NewOfferComponent } from './new-offer/new-offer.component';
     DepositWaitComponent,
     ListTransfertComponent,
     ListClientComponent,
-    NewOfferComponent
+    NewOfferComponent,
+    ListOffreComponent
   ],
   imports: [
     BrowserModule,

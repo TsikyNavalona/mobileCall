@@ -9,7 +9,8 @@ import { DepositWaitComponent } from './deposit-wait/deposit-wait.component';
 import { ListTransfertComponent } from './list-transfert/list-transfert.component';
 import { ListClientComponent } from './list-client/list-client.component';
 import { NewOfferComponent } from './new-offer/new-offer.component';
-
+import { ListOffreComponent } from './list-offre/list-offre.component';
+ListOffreComponent
 
 DepositWaitComponent
 
@@ -26,6 +27,7 @@ const routes: Routes = [{
 { path: 'listTransfert' ,component :ListTransfertComponent},
 {path: 'listClient' ,component:ListClientComponent},
 {path: 'newOffer' ,component:NewOfferComponent},
+{path: 'listOffer' ,component:ListOffreComponent},
 ];
 
 @NgModule({

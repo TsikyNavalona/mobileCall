@@ -22,4 +22,9 @@ export class OffreService {
     console.log(object);
     return this.http.post(base_url + 'api/offre/create', object, options);
   }
+  
+  GetAllOffre(){
+    return this.http.get(base_url + 'api//offre/all');
+  }
+  
 }
