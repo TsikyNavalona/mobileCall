@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+
+        <title></title>
+    </head>
+    <body>
+        <!--========== HEADER ==========-->
+        <header class="header">
+            <div class="header__container">
+                <img src="../../assets/imp/home.png" alt="" class="header__img">
+
+                <a href="#"   class="header__logo">  MobileCall</a>
+    
+                <div class="header__search">
+                    <input type="search" placeholder="Search" class="header__input">
+                    <i class='bx bx-search header__icon'></i>
+                </div>
+    
+                <div class="header__toggle">
+                    <i class='bx bx-menu' id="header-toggle"></i>
+                </div>
+            </div>
+        </header>
+
+        <!--========== NAV ==========-->
+        <div class="nav" style="background-color: black;" id="navbar">
+            <nav class="nav__container">
+                <div>
+                    <a href="#" class="nav__link nav__logo">
+                        <img class=' nav__icon'  style="width:20px"  src="../../assets/imp/home.png" alt="" >
+                        <span class="nav__logo-name">MobileCall</span>
+                    </a>
+    
+                    <div class="nav__list">
+                        <div class="nav__items">
+                            <h3 class="nav__subtitle">Admin Mode</h3>
+    
+                            <a routerLink="/listClient" class="nav__link active">
+                                <img class=' nav__icon'  style="width:20px"  src="../../assets/imp/usermember.png" alt="" >
+                                <span class="nav__name">List of Clients</span>
+                            </a>
+                            
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <img class=' nav__icon'  style="width:20px"  src="../../assets/imp/phone-call.png" alt="" >
+                                    <span class="nav__name">Transfer</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a routerLink="/listTransfert" depositWait class="nav__dropdown-item">List of Transfer</a>
+                                        <a routerLink="/depositWait" class="nav__dropdown-item">Waiting list</a>
+                                        <a href="#" class="nav__dropdown-item">Accounts</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a routerLink="/newOffer" class="nav__link">
+                                <img class=' nav__icon'  style="width:20px"  src="../../assets/imp/cashback.png" alt="" >
+                                <span class="nav__name">New Offer</span>
+                            </a>
+                        </div>
+    
+                        <!-- <div class="nav__items">
+                            <h3 class="nav__subtitle">Menu</h3>
+    
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <i class='bx bx-bell nav__icon' ></i>
+                                    <span class="nav__name">Notifications</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a href="#" class="nav__dropdown-item">Blocked</a>
+                                        <a href="#" class="nav__dropdown-item">Silenced</a>
+                                        <a href="#" class="nav__dropdown-item">Publish</a>
+                                        <a href="#" class="nav__dropdown-item">Program</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-compass nav__icon' ></i>
+                                <span class="nav__name">Explore</span>
+                            </a>
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-bookmark nav__icon' ></i>
+                                <span class="nav__name">Saved</span>
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+
+                <a routerLink="/" class="nav__link nav__logout">
+                    <img class=' nav__icon'  style="width:20px"  src="../../assets/imp/logout.png" alt="" >
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
+        </div>
+
+        <!--========== CONTENTS ==========-->
+        <main>
+            <section>
+                <ul class="collection with-header" style="margin-top:50px" *ngFor = "let item of list_Transfert">
+                    <li class="collection-header"><h4>User n°{{item.id}}</h4></li>
+                    <li class="collection-item">{{item.montant}} Ar</li>
+                    <li class="collection-item">{{item.typetransfert}} </li>
+                    <li class="collection-item">{{item.datetransfert}}</li>
+                  </ul>
+            </section>
+        </main>
+
+        <!--========== MAIN JS ==========-->
+    </body>
+</html>

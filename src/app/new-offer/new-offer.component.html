@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+
+        <title></title>
+    </head>
+    <body>
+        <!--========== HEADER ==========-->
+        <header class="header">
+            <div class="header__container">
+                <img src="../../assets/imp/home.png" alt="" class="header__img">
+
+                <a href="#"   class="header__logo">  MobileCall</a>
+    
+                <div class="header__search">
+                    <input type="search" placeholder="Search" class="header__input">
+                    <i class='bx bx-search header__icon'></i>
+                </div>
+    
+                <div class="header__toggle">
+                    <i class='bx bx-menu' id="header-toggle"></i>
+                </div>
+            </div>
+        </header>
+
+        <!--========== NAV ==========-->
+        <div class="nav" style="background-color: black;" id="navbar">
+            <nav class="nav__container">
+                <div>
+                    <a href="#" class="nav__link nav__logo">
+                        <img class=' nav__icon'  style="width:20px"  src="../../assets/imp/home.png" alt="" >
+                        <span class="nav__logo-name">MobileCall</span>
+                    </a>
+    
+                    <div class="nav__list">
+                        <div class="nav__items">
+                            <h3 class="nav__subtitle">Admin Mode</h3>
+    
+                            <a routerLink="/listClient" class="nav__link active">
+                                <img class=' nav__icon'  style="width:20px"  src="../../assets/imp/usermember.png" alt="" >
+                                <span class="nav__name">List of Clients</span>
+                            </a>
+                            
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <img class=' nav__icon'  style="width:20px"  src="../../assets/imp/phone-call.png" alt="" >
+                                    <span class="nav__name">Transfer</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a routerLink="/listTransfert" depositWait class="nav__dropdown-item">List of Transfer</a>
+                                        <a routerLink="/depositWait" class="nav__dropdown-item">Waiting list</a>
+                                        <a href="#" class="nav__dropdown-item">Accounts</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a routerLink="/newOffer" class="nav__link">
+                                <img class=' nav__icon'  style="width:20px"  src="../../assets/imp/cashback.png" alt="" >
+                                <span class="nav__name">New Offer</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a routerLink="/" class="nav__link nav__logout">
+                    <img class=' nav__icon'  style="width:20px"  src="../../assets/imp/logout.png" alt="" >
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
+        </div>
+
+        <!--========== CONTENTS ==========-->
+        <main>
+            <div class="container">
+                <div class="items">
+                  <div class="items-head">
+                    <p style="font-size: 50px;">Create New Offer</p>
+                    <hr>
+                  </div>
+                  <p class="label-input"style="margin-left:50px;margin-top:50px">Offer name :</p>
+                  <input type="text" class="input100  input " [(ngModel)] = "Offername" [ngModelOptions]="{standalone: true}"style="margin-left:48px;width: 350px"    required/>
+                  
+                    <p class="label-input" style="margin-left:50px " >Operator </p>
+                    <select [(ngModel)]="operChoose" required  class="input100  input " style="margin-left:48px;width: 350px;margin-top:19px">
+                        <option *ngFor = "let oper of list_op" value="{{oper.id}}">{{oper.nom}}</option>
+                    </select>
+
+                    <p class="label-input"style="margin-left:50px;margin-top:50px">Duration :</p>
+                    <input type="number" class="input100  input " [(ngModel)] = "duration" [ngModelOptions]="{standalone: true}"style="margin-left:48px;width: 350px"    required/>
+                  
+                    <p class="label-input"style="margin-left:548px;margin-top:-376px">Priority :</p>
+                    <input type="number" class="input100  input " [(ngModel)] = "Priority" [ngModelOptions]="{standalone: true}"style="margin-left:548px;width: 350px"    required/>
+                  
+                    <p class="label-input"style="margin-left:548px;margin-top:50px">Price :</p>
+                    <input type="number" class="input100  input " [(ngModel)] = "Price" [ngModelOptions]="{standalone: true}"style="margin-left:548px;width: 350px"    required/>
+                  
+                    <button class="button-css" (click)="CreateOffre()" style="margin-top:130px;margin-left:450px">Valid</button>
+            
+                </div>
+              </div>
+        </main>
+
+        <!--========== MAIN JS ==========-->
+    </body>
+</html>

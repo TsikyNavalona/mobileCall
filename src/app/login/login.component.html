@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="session" style="width: 900px;">
+        <div class="left">
+            <p></p>
+        </div>
+        <div class="right mx-auto" style="text-align: center;">
+            <p style="font-size: 24px;margin-top: 50px;margin-left: -85px;font-size: 33px;font-family: Century Gothic;color: #757575">We are  <span style="color: black;font-family:'Courier New', Courier, monospace;margin-left:12px">MobileCall</span></p>
+            <p style="font-size: 19px;margin-bottom: 45px;color: #757575;font-family: Century Gothic;">Welcome back! Log in to your account here:</p>
+
+            <p class="label-input"style="">Cell phone</p>
+            <input type="text" class="input100  input " [(ngModel)] = "number" [ngModelOptions]="{standalone: true}"style="margin-left:48px;width: 350px"    required/>
+        
+            <p class="label-input"style="">Password</p>
+            <input type="password" class="input100  input " [(ngModel)] = "password" [ngModelOptions]="{standalone: true}"style="margin-left:48px;width: 350px"    required/>
+            <b style="color:red;margin-bottom: 20px;margin-right : 35px">{{ message }}</b><br>
+            <button class="button-css" (click) = "login()" style="margin-right: 45px;">Log in</button>
+            <p style="font-family: Century Gothic;">Don't have an account yet? Sign Up <a routerLink="registration">here</a>!</p>
+            
+            <p style="font-family: Century Gothic;">Admin mode <a routerLink="AdminLogin">here</a>!</p>
+        </div>
+    </div>
+    
+</body>
+</html>
