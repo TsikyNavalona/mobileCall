@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { base_url } from 'src/environments/environment';
 import { HelperService } from './helper.service';
 
 @Injectable({
@@ -11,6 +10,6 @@ export class OperateurService {
   constructor(private http : HttpClient, private HelperServ : HelperService) { }
   
   GetAllOperateur(){
-    return this.http.get(base_url + 'api/Operateur/all');
+    return this.http.get('http://mobile-call.herokuapp.com/' + 'api/Operateur/all');
   }
 }

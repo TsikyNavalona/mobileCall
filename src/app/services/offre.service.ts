@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { base_url } from 'src/environments/environment';
 import { HelperService } from './helper.service';
 
 @Injectable({
@@ -20,11 +19,11 @@ export class OffreService {
     }
     const object = JSON.stringify(OfferObject);
     console.log(object);
-    return this.http.post(base_url + 'api/offre/create', object, options);
+    return this.http.post('http://mobile-call.herokuapp.com/' + 'api/offre/create', object, options);
   }
   
   GetAllOffre(){
-    return this.http.get(base_url + 'api//offre/all');
+    return this.http.get('http://mobile-call.herokuapp.com/' + 'api//offre/all');
   }
   
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { base_url } from 'src/environments/environment';
 import { HelperService } from './helper.service';
 
 @Injectable({
@@ -14,7 +13,7 @@ export class UserService {
       .set('number', number)
       .set('password', password);
   
-    return this.http.post(base_url + 'user/login',
+    return this.http.post('http://mobile-call.herokuapp.com/' + 'user/login',
       body.toString(),
       {
         headers: new HttpHeaders()
@@ -32,11 +31,11 @@ export class UserService {
     }
     const object = JSON.stringify(transferObject);
     console.log(object);
-    return this.http.post(base_url + 'user/create', object, options);
+    return this.http.post('http://mobile-call.herokuapp.com/' + 'user/create', object, options);
   }
 
   GetAllUser(){
-    return this.http.get(base_url + 'user/all');
+    return this.http.get('http://mobile-call.herokuapp.com/' + 'user/all');
   }
 
 }

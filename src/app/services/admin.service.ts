@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { base_url } from 'src/environments/environment';
 import { HelperService } from './helper.service';
 
 @Injectable({
@@ -14,7 +13,7 @@ export class AdminService {
       .set('name', name)
       .set('password', password);
   
-    return this.http.post(base_url + 'admin/login',
+    return this.http.post('http://mobile-call.herokuapp.com/' + 'admin/login',
       body.toString(),
       {
         headers: new HttpHeaders()

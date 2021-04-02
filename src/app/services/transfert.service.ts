@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { base_url } from 'src/environments/environment';
 import { HelperService } from './helper.service';
 
 @Injectable({
@@ -12,18 +11,18 @@ export class TransfertService {
 
   
   GetAllTransfert(){
-    return this.http.get(base_url + 'api/transfert/all');
+    return this.http.get('http://mobile-call.herokuapp.com/' + 'api/transfert/all');
   }
   
   GetTransfertEnAttente(){
-    return this.http.get(base_url + 'api/transfert/enattente');
+    return this.http.get('http://mobile-call.herokuapp.com/' + 'api/transfert/enattente');
   }
   UpdateTransfert(id : string ,date : string){
     const body = new HttpParams()
       .set('id', id)
       .set('date',date)
   
-    return this.http.put(base_url + 'api/transfert/updateAttente',
+    return this.http.put('http://mobile-call.herokuapp.com/' + 'api/transfert/updateAttente',
       body.toString(),
       {
         headers: new HttpHeaders()
